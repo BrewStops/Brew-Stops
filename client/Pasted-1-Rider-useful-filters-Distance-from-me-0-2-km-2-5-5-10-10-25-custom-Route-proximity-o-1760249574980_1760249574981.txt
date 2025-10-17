@@ -1,0 +1,55 @@
+1) Rider-useful filters
+	•	Distance from me (0–2 km, 2–5, 5–10, 10–25, custom)
+	•	Route proximity (on-route / small detour / big detour)
+	•	Opening now / opens early (<07:30) / open late (>18:00)
+	•	Group size capacity (solo, 2–6, 7–12, 13–20, 20+)
+	•	Bike parking: covered racks / open racks / bring bikes inside / no bike parking
+	•	Security: visible from tables / CCTV / lockable area
+	•	Outdoor seating: yes / heated / sheltered
+	•	Service speed: quick counter / table service / pre-order friendly
+	•	Water bottle refill: yes / free / paid
+	•	Facilities: toilets / baby change / repair stand / track pump / basic tools
+	•	Power sockets / charging allowed
+	•	Payment: card / cash / splits the bill / tap-to-pay
+	•	Dietary: gluten-free friendly / vegan options / veggie / dairy-free / nut-aware
+	•	Menu focus: big breakfasts / cakes & bakes / light bites / proper meals
+	•	Coffee quality: specialty / good / basic
+	•	Price level: £ / ££ / £££
+	•	Accessibility: step-free / accessible loo
+	•	Busy times: quiet / moderate / busy (crowd-sourced)
+	•	Dog friendly
+	•	Kids friendly
+	•	Rain plan (can seat group inside if it rains)
+	•	Queue tolerant (staff ok with 10+ riders arriving at once)
+
+2) Café detail fields (what you store per café)
+	•	Basic: name, description (short), phone, website, email
+	•	Location: latitude, longitude, full address, town, postcode, country, plus optional Plus Code
+	•	Hours: per weekday + holiday notes
+	•	Group capacity: max indoor seats, max outdoor seats, “max rider group”
+	•	Bike parking: type (covered/open/inside), count, visibility from table, security notes
+	•	Amenities: toilets, water refill, pump/tools, sockets, Wi-Fi, dog/kid friendly
+	•	Dietary tags: GF-friendly, vegan, veggie, dairy-free, nut-aware + free-text notes
+	•	Menu highlights: 3–6 popular items, price band, “best seller”
+	•	Service: average serve time, can pre-order for groups (Y/N), booking link
+	•	Photos: hero image + gallery (user-submitted)
+	•	Moderation: verified (Y/N), last updated, submitted by user id
+	•	Ratings (aggregates): coffee, food, value, bike-friendliness, group-friendliness + overall
+
+3) “Add a Café” form (user flow + validation)
+
+Sections
+	1.	Basics: Name* (min 2 chars), Short description (≤160 chars)
+	2.	Location: Map picker + GPS capture (see #5), auto-filled address (editable)
+	3.	Hours: simple toggles + free-text notes
+	4.	Cycling bits: bike parking type*, count, visibility, water refill, tools/pump
+	5.	Group info: safe max group size, can book for groups (Y/N), best times for groups
+	6.	Dietary: quick tick-boxes + free-text for cross-contamination notes
+	7.	Photos: up to 8 images (see #4)
+	8.	Review snippet: optional first review + star ratings
+	9.	Submit: “I confirm details are accurate” checkbox
+
+Validation
+	•	Required: name, lat/lng, at least one bike-parking status, at least one photo OR website link
+	•	Duplicate check: same name within 50–150 m → prompt: “Is this one of these existing cafés?”
+	•	Photo rules: JPEG/PNG/WEBP, max 6–10 MB each, auto-compress client-side
